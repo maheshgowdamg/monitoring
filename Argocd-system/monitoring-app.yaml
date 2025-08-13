@@ -24,7 +24,7 @@ spec:
           - $values/monitoring/loki-values.yaml
 
     # 3 - Values file source (this Git repo)
-    - repoURL: https://github.com/<your-username>/<your-repo>.git
+    - repoURL: 'https://github.com/maheshgowdamg/monitoring.git'
       targetRevision: main
       ref: values
 
