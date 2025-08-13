@@ -7,15 +7,7 @@ spec:
   project: default
   sources:
 
-    # 1 - Prometheus & Grafana
-    - repoURL: https://prometheus-community.github.io/helm-charts
-      chart: kube-prometheus-stack
-      targetRevision: 65.4.0
-      helm:
-        valueFiles:
-          - $values/monitoring/prometheus-values.yaml
-
-    # 2 - Loki & Promtail
+    # 1 - Loki & Promtail
     - repoURL: https://grafana.github.io/helm-charts
       chart: loki-stack
       targetRevision: 2.10.0
@@ -23,7 +15,7 @@ spec:
         valueFiles:
           - $values/monitoring/loki-values.yaml
 
-    # 3 - Values file source (this Git repo)
+    # 2 - Values file source (this Git repo)
     - repoURL: 'https://github.com/maheshgowdamg/monitoring.git'
       targetRevision: master
       ref: values
