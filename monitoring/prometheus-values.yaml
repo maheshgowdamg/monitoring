@@ -1,6 +1,8 @@
 grafana:
-  adminUser: admin
-  adminPassword: admin123
+  admin:
+    existingSecret: grafana-admin
+    userKey: admin-user
+    passwordKey: admin-password
 
   service:
     type: NodePort
@@ -47,4 +49,3 @@ prometheus:
     ingressClassName: nginx
     hosts:
       - prometheus.local
-
