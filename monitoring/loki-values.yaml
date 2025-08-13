@@ -1,0 +1,17 @@
+grafana:
+  enabled: false
+
+loki:
+  service:
+    type: NodePort
+    nodePort: 32002
+
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+      - loki.local
+
+promtail:
+  enabled: true
+

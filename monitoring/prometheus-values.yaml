@@ -1,0 +1,50 @@
+grafana:
+  adminUser: admin
+  adminPassword: admin123
+
+  service:
+    type: NodePort
+    nodePort: 32000
+
+  persistence:
+    enabled: true
+    size: 5Gi
+
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+      - grafana.local
+
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Loki
+          type: loki
+          access: proxy
+          url: http://loki-stack:3100
+          isDefault: false
+
+  dashboards:
+    default:
+      node-exporter-full:
+        gnetId: 1860
+        revision: 31
+        datasource: Prometheus
+      kubernetes-pods:
+        gnetId: 6417
+        revision: 1
+        datasource: Prometheus
+
+prometheus:
+  service:
+    type: NodePort
+    nodePort: 32001
+
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+      - prometheus.local
+
