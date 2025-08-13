@@ -25,7 +25,7 @@ spec:
 
     # 3 - Values file source (this Git repo)
     - repoURL: 'https://github.com/maheshgowdamg/monitoring.git'
-      targetRevision: main
+      targetRevision: master
       ref: values
 
   destination:
