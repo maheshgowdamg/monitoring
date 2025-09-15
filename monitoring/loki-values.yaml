@@ -11,7 +11,7 @@ loki:
     enabled: true
     accessModes: [ReadWriteOnce]
     size: 10Gi
-    storageClassName: gp3   # optional, add if needed
+    storageClassName: hostpath   # optional, add if needed
   resources:
     requests:
       cpu: 100m
