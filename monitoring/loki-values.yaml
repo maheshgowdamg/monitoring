@@ -3,14 +3,14 @@ loki:
     enabled: true
     accessModes:
       - ReadWriteOnce
-    size: 10Gi
+    size: 2Gi
   resources:
     requests:
-      cpu: 100m
-      memory: 1000Mi
+      cpu: 50m
+      memory: 512Mi
     limits:
-      cpu: 800m
-      memory: 3000Mi
+      cpu: 400m
+      memory: 1000Mi
   config:
     limits_config:
       retention_period: 120h
