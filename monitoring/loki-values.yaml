@@ -1,17 +1,9 @@
-grafana:
-  enabled: true
-prometheus:
-  enabled: false
-prometheusRule:
-  enabled: false
-
 loki:
-  isDefault: false     # 👈 Fix: ensure Loki datasource is NOT the default
   persistence:
     enabled: true
-    accessModes: [ReadWriteOnce]
+    accessModes:
+      - ReadWriteOnce
     size: 10Gi
-    storageClassName: hostpath   # optional, add if needed
   resources:
     requests:
       cpu: 100m
@@ -34,5 +26,3 @@ promtail:
     requests:
       cpu: 100m
       memory: 128Mi
-  serviceMonitor:
-    enabled: true  
