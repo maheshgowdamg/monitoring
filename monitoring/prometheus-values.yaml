@@ -19,6 +19,7 @@ grafana:
           isDefault: true
 
 prometheus:
+  enabled: true
   prometheusSpec:
     storageSpec:
       volumeClaimTemplate:
